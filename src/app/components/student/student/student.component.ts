@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentComponent implements OnInit {
 
+  studentStatus: string;
+  buttonStatus: boolean;
   constructor() { }
 
   ngOnInit(): void {
+    this.studentStatus = 'StudentComponent is UP!';
+    this.buttonStatus = true;
     console.log('Student Started');
   }
 
@@ -23,4 +27,8 @@ export class StudentComponent implements OnInit {
     console.log('Student Destroyed');
   }
 
+  toggle() {
+    this.buttonStatus = !this.buttonStatus;
+    this.studentStatus = 'Button Clicked and disable value - ' + this.buttonStatus;
+  }
 }

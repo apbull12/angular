@@ -1,0 +1,229 @@
+//$myFont: Helvetica, sans-serif;
+//$myColor: red;
+//$myFontSize: 18px;
+//$myWidth: 680px;
+//
+//* {
+//  font-family: $myFont;
+//  font-size: $myFontSize;
+//  color: $myColor;
+//}
+//
+///* multi line
+// comments */
+//
+//#container {
+//  $myColor: green !global;
+//  color: $myColor;
+//  width: $myWidth;
+//  background-image: url("https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Minimalist-Crumpled-Paper-Simple-Background-Image.jpg"); //default functions
+//}
+//div {
+//  padding: 10px;
+//  border: black solid; //border with color
+//}
+//
+//.nesting {
+//  display: none;
+//  nav {
+//    ul {
+//      margin: 0;
+//      padding: 0;
+//      list-style: none;
+//    }
+//    li {
+//      display: inline-block;
+//    }
+//    a {
+//      color: black !important;
+//      display: block;
+//      padding: 6px 12px;
+//      text-decoration: none;
+//
+//      // parent selector
+//      &:hover {
+//        color: chartreuse !important;
+//      }
+//
+//      //Sass Nested Properties
+//      font: {
+//        family: Helvetica, sans-serif;
+//        size: 18px;
+//        weight: bold;
+//      }
+//    }
+//  }
+//}
+//
+///*  CSS for nesting without scss
+//nav ul {
+//  margin: 0;
+//  padding: 0;
+//  list-style: none;
+//}
+//nav li {
+//  display: inline-block;
+//}
+//nav a {
+//  display: block;
+//  padding: 6px 12px;
+//  text-decoration: none;
+//}
+// */
+//
+//.parent-selector {
+//  display: none;
+//  //Adding Suffixes
+//  .accordion {
+//    max-width: 600px;
+//    margin: 4rem auto;
+//    width: 90%;
+//    font-family: "Raleway", sans-serif;
+//    background: #f4f4f4;
+//
+//    &__copy {
+//      padding: 1rem 1.5rem 2rem 1.5rem;
+//      color: gray;
+//      line-height: 1.6;
+//      font-size: 14px;
+//      font-weight: 500;
+//
+//      &--open {
+//        display: block;
+//      }
+//    }
+//  }
+//}
+//
+//
+//.placeholder-selector {
+//  display: none;
+//  %toolbelt {
+//    color: #fff;
+//    border: none;
+//    padding: 15px 32px;
+//    text-align: center;
+//    text-decoration: none;
+//    display: inline-block;
+//    font-size: 16px;
+//    margin: 4px 2px;
+//    cursor: pointer;
+//
+//    &:hover { border: 2px rgba(#000, .5) solid; }
+//  }
+//
+//  .action-buttons {
+//    @extend %toolbelt;
+//    background-color: #4CAF50;
+//  }
+//
+//  .reset-buttons {
+//    @extend %toolbelt;
+//    background-color: blueviolet;
+//  }
+//
+//  //css result
+//  //.action-buttons, .reset-buttons {
+//  //  box-sizing: border-box;
+//  //  border-top: 1px rgba(0, 0, 0, 0.12) solid;
+//  //  padding: 16px 0;
+//  //  width: 100%;
+//  //}
+//  //.action-buttons:hover, .reset-buttons:hover {
+//  //  border: 2px rgba(0, 0, 0, 0.5) solid;
+//  //}
+//  //
+//  //.action-buttons {
+//  //  color: #4285f4;
+//  //}
+//  //
+//  //.reset-buttons {
+//  //  color: #cddc39;
+//  //}
+//
+//}
+//
+
+.main {
+  margin: 0;
+  top: 0;
+}
+
+
+.content {
+  background-color: gold;
+}
+
+.side-nav {
+  border-radius: 10px;
+  width: 100%;
+  background-color: black;
+}
+
+
+nav {
+  color: white;
+  padding: 10px;
+  height: 100%;
+
+  h2 {
+    padding: 5px;
+    border: white solid 1px;
+    border-radius: 10px;
+    color: gold;
+    font-size: 26px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    display: block;
+  }
+
+  a {
+    padding: 10px;
+    color: white;
+    display: block;
+    text-decoration: none;
+
+    // parent selector
+    &:hover {
+      color: gold;
+    }
+
+    //Sass Nested Properties
+  }
+}
+
+
+* {
+  box-sizing: border-box;
+  font: {
+    family: Helvetica, sans-serif;
+    size: 18px;
+    weight: bold;
+  }
+}
+
+.row {
+  text-align: center;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 900px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

@@ -3,10 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DashboardComponent } from './components/dashbord/dashboard/dashboard.component';
+import { StudentComponent } from './components/student/student/student.component';
+import { TeacherComponent } from './components/teacher/teacher/teacher.component';
+import { StatusPrinterComponent } from './components/status-printer/status-printer/status-printer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DashboardComponent,
+    StudentComponent,
+    TeacherComponent,
+    StatusPrinterComponent
   ],
   imports: [
     BrowserModule,

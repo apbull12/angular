@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-student',
@@ -7,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentComponent implements OnInit {
 
+  @Output() studentName = new EventEmitter<string>();
+  @Input() studentList;
+
   studentStatus: string;
   buttonStatus: boolean;
+  name: string;
   constructor() { }
 
   ngOnInit(): void {
@@ -30,5 +35,14 @@ export class StudentComponent implements OnInit {
   toggle() {
     this.buttonStatus = !this.buttonStatus;
     this.studentStatus = 'Button Clicked and disable value - ' + this.buttonStatus;
+  }
+
+  sendToParent() {
+    if (this.studentList.includes(this.name)) {
+      alert('Student Name ' + this.name + 'is already taken!!!');
+    } else {
+      this.studentName.emit(this.name);
+      alert('Added Successfully :)');
+    }
   }
 }

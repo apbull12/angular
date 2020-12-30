@@ -7,6 +7,7 @@ import { DashboardComponent } from './components/dashbord/dashboard/dashboard.co
 import { StudentComponent } from './components/student/student/student.component';
 import { TeacherComponent } from './components/teacher/teacher/teacher.component';
 import { StatusPrinterComponent } from './components/status-printer/status-printer/status-printer.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,10 +17,11 @@ import { StatusPrinterComponent } from './components/status-printer/status-print
     TeacherComponent,
     StatusPrinterComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

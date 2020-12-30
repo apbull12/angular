@@ -1,1 +1,8 @@
 <p>dashboard works!</p>
+<div>
+  <h2>Dashboard Student information:</h2>
+  <h2 *ngFor="let student of students; index as i">{{i + 1}}. {{student}}</h2>
+</div>
+
+<app-student (studentName)="addStudent($event)"
+              [studentList]="students"></app-student>

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,9 +8,11 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 export class DashboardComponent implements OnInit {
 
   @Output() status = new EventEmitter<string>();
+  students: any[];
   constructor() { }
 
   ngOnInit(): void {
+    this.students = ['Arun'];
     this.status.emit('Dashboard Started');
     console.log('Dashboard Started');
   }
@@ -25,4 +27,7 @@ export class DashboardComponent implements OnInit {
     console.log('Dashboard Destroyed');
   }
 
+  addStudent($event: string) {
+    this.students.push($event);
+  }
 }

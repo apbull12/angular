@@ -13,3 +13,10 @@
 <br>
 
 <h2> Student Name: {{name}}</h2>
+
+<div [formGroup]="studentForm">
+  <input type="text" placeholder="Enter name" formControlName="studName">
+  <input type="email" placeholder="Enter Email" formControlName="email">
+  <input type="text" placeholder="Enter Address" formControlName="address">
+  <button (click)="submit()" [disabled]="!this.studentForm.valid">Add Student</button>
+</div>

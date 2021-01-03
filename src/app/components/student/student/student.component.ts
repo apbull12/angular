@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import * as _ from 'lodash';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-student',
@@ -11,10 +12,17 @@ export class StudentComponent implements OnInit {
   @Output() studentName = new EventEmitter<string>();
   @Input() studentList;
 
+  studentForm: FormGroup;
   studentStatus: string;
   buttonStatus: boolean;
   name: string;
-  constructor() { }
+  constructor(private fb: FormBuilder) {
+    this.studentForm = this.fb.group({
+      studName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      address: '',
+    });
+  }
 
   ngOnInit(): void {
     this.studentStatus = 'StudentComponent is UP!';
@@ -44,5 +52,9 @@ export class StudentComponent implements OnInit {
       this.studentName.emit(this.name);
       alert('Added Successfully :)');
     }
+  }
+
+  submit() {
+    console.log(this.studentForm.value);
   }
 }

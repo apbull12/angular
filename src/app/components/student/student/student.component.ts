@@ -39,7 +39,7 @@ export class StudentComponent implements OnInit {
 
   sendToParent() {
     if (this.studentList.includes(this.name)) {
-      alert('Student Name ' + this.name + 'is already taken!!!');
+      alert('Student Name ' + this.name + ' is already taken!!!');
     } else {
       this.studentName.emit(this.name);
       alert('Added Successfully :)');
